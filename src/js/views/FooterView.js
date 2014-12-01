@@ -15,7 +15,7 @@ define([
 
             var compiledTemplate = _.template( footerTemplate );
 
-            $(".footer-container").append(compiledTemplate);
+            $(".footer-container").html('').append(compiledTemplate);
         }
 
     });

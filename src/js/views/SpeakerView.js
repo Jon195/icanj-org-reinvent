@@ -1,5 +1,5 @@
 /**
- * Created by maxjerin on 11/29/14.
+ * Created by maxjerin on 11/30/14.
  */
 define([
     'jquery',
@@ -7,15 +7,15 @@ define([
     'backbone',
     'views/FooterView',
     'views/HeaderView',
-    'text!partials/homeTemplate.html'
-], function($, _, Backbone, FooterView, HeaderView, homeTemplate){
+    'text!partials/speakerTemplate.html'
+], function($, _, Backbone, FooterView, HeaderView, speakerTemplate){
 
-    var HomeView = Backbone.View.extend({
+    var SpeakerView = Backbone.View.extend({
         el: $(".page-container"),
 
         render: function(){
 
-            this.$el.html('').html(homeTemplate);
+            this.$el.html('').html(speakerTemplate);
 
             var headerView = new HeaderView();
             headerView.render();
@@ -27,6 +27,6 @@ define([
 
     });
 
-    return HomeView;
+    return SpeakerView;
 
 });

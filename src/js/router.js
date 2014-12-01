@@ -6,17 +6,20 @@ define([
     'underscore',
     'backbone',
     'views/HomeView',
-    'views/FooterView'
-], function($, _, Backbone, HomeView, FooterView) {
+    'views/FooterView',
+    'views/SpeakerView'
+], function($, _, Backbone, HomeView, FooterView, SpeakerView) {
 
     var AppRouter = Backbone.Router.extend({
         routes: {
-            // Define some URL routes
-//            'projects': 'showProjects',
-//            'users': 'showContributors',
+            /* IMPORTANT: All routes need to be defined default which is a catch-all*/
+            'speakers': 'speakerAction',
+            'home': 'defaultAction',
 
-            // Default
+            // Default (
             '*actions': 'defaultAction'
+
+
         }
     });
 
@@ -44,6 +47,13 @@ define([
             // We have no matching route, lets display the home page
             var homeView = new HomeView();
             homeView.render();
+        });
+
+        app_router.on('route:speakerAction', function (actions) {
+
+            // We have no matching route, lets display the home page
+            var speakerView = new SpeakerView();
+            speakerView.render();
         });
 
         // Unlike the above, we don't call render on this view as it will handle

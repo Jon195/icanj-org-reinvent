@@ -15,7 +15,8 @@ define([
 
             var compiledTemplate = _.template( headerTemplate );
 
-            $(".header-container").append(compiledTemplate);
+
+            $(".header-container").html('').append(compiledTemplate);
         }
 
     });
